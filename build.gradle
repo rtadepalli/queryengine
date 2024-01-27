@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/org.apache.arrow/arrow-vector
+    implementation 'org.apache.arrow:arrow-vector:14.0.2'
+    // https://mvnrepository.com/artifact/com.univocity/univocity-parsers
+    implementation 'com.univocity:univocity-parsers:2.9.1'
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    implementation 'com.google.guava:guava:33.0.0-jre'
+    // https://mvnrepository.com/artifact/org.apache.arrow/arrow-memory
+    implementation 'org.apache.arrow:arrow-memory:14.0.2'
+    // https://mvnrepository.com/artifact/org.apache.arrow/arrow-memory-core
+    implementation 'org.apache.arrow:arrow-memory-core:14.0.2'
+    // https://mvnrepository.com/artifact/org.apache.arrow/arrow-memory-netty
+    runtimeOnly 'org.apache.arrow:arrow-memory-netty:14.0.2'
+}
+
+test {
+    useJUnitPlatform()
+}
