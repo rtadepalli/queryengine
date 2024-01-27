@@ -21,7 +21,9 @@ public interface LogicalPlan {
    */
   List<LogicalPlan> children();
 
-  String pretty();
+  default String pretty() {
+    return format(this);
+  }
 
   default String format(LogicalPlan logicalPlan, int indent) {
     StringBuilder sb = new StringBuilder();
